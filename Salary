@@ -148,7 +148,7 @@ class Programmer extends Employee
                  break;
             case "Professor":
                  pf.input();
-                 if (pf.bp>30000&pf.bp<=40000)
+                 if (pf.bp<40000)
                      {
                      pf.profsal();
                      pf.output();
