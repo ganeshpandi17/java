@@ -1,0 +1,62 @@
+import java.util.Scanner;
+interface Calculator
+{
+     public void add(double a,double b);
+     public void sub(double a,double b);
+     public void mul(double a,double b);
+     public void div(double a,double b);
+  }
+class arithmetic implements Calculator{
+    
+    public void add(double a,double b){
+        System.out.println("Result: "+(a+b));
+    }
+    
+    public void sub(double a,double b){
+        System.out.println("Result: "+(a-b));
+    }
+    
+    public void mul(double a,double b){
+        System.out.println("Result: "+(a*b));
+    }
+    
+    public void div(double a,double b){
+        System.out.println("Result: "+String.format("%.3f",a/b));
+    }
+}
+class operations
+{
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.println("1.Addition");
+        System.out.println("2.Subtraction");
+        System.out.println("3.Multiplication");
+        System.out.println("4.Division");
+        System.out.println("Enter choice:");
+        int ch=in.nextInt();
+        System.out.println("Enter a first number:");
+        double num1=in.nextDouble();
+        System.out.println("Enter a second number:");
+        double num2=in.nextDouble();
+        arithmetic nu=new arithmetic();
+        
+        switch(ch){
+            case 1:
+                 nu.add(num1, num2);
+                 break;
+            case 2:
+                nu.sub(num1, num2);
+                break;
+            case 3:
+                nu.mul(num1, num2);
+                break;
+            case 4:
+                 nu.div(num1, num2);
+                 break;
+            default:
+                System.out.println("Invalid Operation");
+                break;
+               
+            }
+       }
+}
